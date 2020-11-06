@@ -9,7 +9,7 @@ const Footer = () => {
         Dados dos veículos de propriedade do Fundação Instituto de Pesquisas
         Econômicas - FIPE ©. https://veiculos.fipe.org.br/
       </span>
-      <span> © Lucas Pereira 2020</span>
+      <span> Lucas Pereira © 2020</span>
     </Container>
   );
 };
