@@ -6,13 +6,13 @@ import { Container } from "./styles";
 const TableFipe = ({ display, informationsVehicle, returnMain }) => {
   const getDateNow = () => {
     const daysOfTheWeek = [
+      "Domingo",
       "Segunda-Feira",
       "Terça-Feira",
       "Quarta-Feira",
       "Quinta-Feira",
       "Sexta-Feira",
       "Sábado",
-      "Domingo",
     ];
     const monthsOfTheYear = [
       "Janeiro",
