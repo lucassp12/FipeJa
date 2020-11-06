@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.div`
-  margin-top: 20px;
+  margin-top: 0px;
   margin-bottom: 20px;
   font-family: "Roboto Slab", serif;
   color: #000;
@@ -13,7 +13,7 @@ export const Container = styled.div`
     padding: 5px;
     border: 0;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
