@@ -20,7 +20,7 @@ export const Container = styled.div`
     }
 
     @media(max-width: 350px){
-      width: 300px;
+      width: 290px;
       font-size: 8px;
     }
 `;

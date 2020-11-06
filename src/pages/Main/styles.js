@@ -4,9 +4,9 @@ export const Container = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+
   flex-direction: column;
-  padding: 10px;
+  padding: 30px;
 
   img {
     width: 135px;
@@ -79,7 +79,7 @@ export const ContainerInputs = styled.div`
     }
 
     @media(max-width: 350px){
-      width: 300px;
+      width: 290px;
     }
   }
 

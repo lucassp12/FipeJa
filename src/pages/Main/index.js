@@ -202,7 +202,7 @@ const Main = () => {
         informationsVehicle={fipeVehicle}
         returnMain={handleReturnMain}
       />
-      <Footer />
+     <Footer />
     </Container>
   );
 };
