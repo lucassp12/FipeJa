@@ -4,6 +4,7 @@ import logo from "../../assets/logo.png";
 
 import api from "../../services/api";
 import TableFipe from "../../Components/TableFipe";
+import Footer from "../../Components/Footer";
 
 import {
   Container,
@@ -201,6 +202,7 @@ const Main = () => {
         informationsVehicle={fipeVehicle}
         returnMain={handleReturnMain}
       />
+      <Footer />
     </Container>
   );
 };

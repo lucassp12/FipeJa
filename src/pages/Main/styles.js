@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 40px;
+  padding: 10px;
 
   img {
     width: 135px;
