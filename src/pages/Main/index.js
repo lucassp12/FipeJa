@@ -68,22 +68,7 @@ const Main = () => {
   const [years, setYears] = useState(stateYears);
   const [year, setYear] = useState("");
   const [fipeVehicle, setFipeVehicle] = useState(stateFipeVehicle);
-  const [displayFipe, setDisplayFipe] = useState(false);
-
-  useEffect(async () => {
-    loadMarks();
-
-    if (mark) {
-      loadVehicles();
-    } else {
-      setVehicles(stateVehicles);
-    }
-    if (vehicle) {
-      loadYears();
-    } else {
-      setYears(stateYears);
-    }
-  }, [typeVehicle, mark, vehicle]);
+  const [displayFipe, setDisplayFipe] = useState(0);
 
   const loadMarks = async () => {
     const response = await api.get(`/api/1/${typeVehicle}/marcas.json`);
@@ -104,6 +89,23 @@ const Main = () => {
     setYears(response.data);
   };
 
+  useEffect(() => {
+    loadMarks();
+
+    if (mark) {
+      loadVehicles();
+    } else {
+      setVehicles(stateVehicles);
+    }
+    if (vehicle) {
+      loadYears();
+    } else {
+      setYears(stateYears);
+    }
+  }, [typeVehicle, mark, vehicle ]);
+
+
+
   const addTypeVehicle = (type) => {
     setTypeVehicle(type);
     setVehicle("");
@@ -117,7 +119,6 @@ const Main = () => {
   };
 
   const addVehicle = (event) => {
-    console.log(event.target.value);
     setVehicle(event.target.value);
   };
 
@@ -126,7 +127,7 @@ const Main = () => {
   };
 
   const handleReturnMain = () => {
-    setDisplayFipe(false);
+    setDisplayFipe(0);
   };
 
   const handleGetFipeVehicle = async () => {
@@ -135,7 +136,7 @@ const Main = () => {
         `/api/1/${typeVehicle}/veiculo/${mark}/${vehicle}/${year}.json`
       );
       setFipeVehicle(response.data);
-      setDisplayFipe(true);
+      setDisplayFipe(1);
     } else {
       alert("Preencha todos os campos!");
     }
@@ -143,7 +144,7 @@ const Main = () => {
 
   return (
     <Container>
-      <img src={logo} />
+      <img  src={logo} alt="Logo" />
       <ContainerButtons display={displayFipe}>
         <ButtonSelectVehicle
           display={displayFipe}

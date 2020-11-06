@@ -42,6 +42,7 @@ const TableFipe = ({ display, informationsVehicle, returnMain }) => {
       <button onClick={() => returnMain()}>
         <FaArrowLeft /> Voltar
       </button>
+      <table>
         <tbody>
           <tr>
             <td>Mês de referência:</td>
@@ -74,6 +75,7 @@ const TableFipe = ({ display, informationsVehicle, returnMain }) => {
             </td>
           </tr>
         </tbody>
+      </table>
     </Container>
   );
 };

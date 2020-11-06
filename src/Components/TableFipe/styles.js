@@ -24,17 +24,20 @@ export const Container = styled.div`
       background: red;
     }
   }
+
   table {
-
-  }
-
-  td {
-      border: 1px solid black;
+    border-radius: 5px;
+    background: #000;
+    td {
+      border: 0.1em solid black;
+      border-radius: 5px;
+      background: #fff;
       padding: 10px;
     }
+  }
 
   ${(props) =>
-    !props.display &&
+    !props.display  &&
     css`
       & {
         display: none;
