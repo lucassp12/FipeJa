@@ -1,9 +1,9 @@
-import styled, { css} from 'styled-components';
-
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   margin-top: 20px;
   margin-bottom: 20px;
+  font-family: "Roboto Slab", serif;
   color: #000;
 
   button {
@@ -24,11 +24,14 @@ export const Container = styled.div`
       background: red;
     }
   }
+  table {
+
+  }
 
   td {
-    border: 1px solid black;
-    padding: 10px;
-  }
+      border: 1px solid black;
+      padding: 10px;
+    }
 
   ${(props) =>
     !props.display &&
@@ -37,7 +40,4 @@ export const Container = styled.div`
         display: none;
       }
     `}
-
-
-
 `;
