@@ -13,77 +13,31 @@ import {
   ButtonSelectVehicle,
 } from "./styles";
 
-const stateMarks = [
-  {
-    name: "",
-    fipe_name: "",
-    order: 0,
-    key: "",
-    id: 0,
-  },
-];
-
-const stateVehicles = [
-  {
-    fipe_marca: "",
-    name: "",
-    marca: "",
-    key: "",
-    id: "",
-    fipe_name: "",
-  },
-];
-
-const stateYears = [
-  {
-    fipe_marca: "",
-    fipe_codigo: "",
-    name: "",
-    marca: "",
-    key: "",
-    veiculo: "",
-    id: "",
-  },
-];
-
-const stateFipeVehicle = {
-  referencia: "",
-  fipe_codigo: "",
-  name: "",
-  combustivel: "",
-  marca: "",
-  ano_modelo: "",
-  preco: "",
-  key: "",
-  time: 0.0,
-  veiculo: "",
-  id: "",
-};
 
 const Main = () => {
   const [typeVehicle, setTypeVehicle] = useState("carros");
   const [mark, setMark] = useState("");
-  const [marks, setMarks] = useState(stateMarks);
-  const [vehicles, setVehicles] = useState(stateVehicles);
+  const [marks, setMarks] = useState([]);
+  const [vehicles, setVehicles] = useState([]);
   const [vehicle, setVehicle] = useState("");
-  const [years, setYears] = useState(stateYears);
+  const [years, setYears] = useState([]);
   const [year, setYear] = useState("");
-  const [fipeVehicle, setFipeVehicle] = useState(stateFipeVehicle);
+  const [fipeVehicle, setFipeVehicle] = useState([]);
   const [displayFipe, setDisplayFipe] = useState(0);
 
-  const loadMarks = async () => {
+  const loadMarks =  async () => {
     const response = await api.get(`/api/1/${typeVehicle}/marcas.json`);
     setMarks(response.data);
   };
 
-  const loadVehicles = async () => {
+  const loadVehicles =  async () => {
     const response = await api.get(
       `/api/1/${typeVehicle}/veiculos/${mark}.json`
     );
     setVehicles(response.data);
   };
 
-  const loadYears = async () => {
+  const loadYears =  async () => {
     const response = await api.get(
       `/api/1/${typeVehicle}/veiculo/${mark}/${vehicle}.json`
     );
@@ -96,12 +50,12 @@ const Main = () => {
     if (mark) {
       loadVehicles();
     } else {
-      setVehicles(stateVehicles);
+      setVehicles([]);
     }
     if (vehicle) {
       loadYears();
     } else {
-      setYears(stateYears);
+      setYears([]);
     }
   }, [typeVehicle, mark, vehicle ]);
 
